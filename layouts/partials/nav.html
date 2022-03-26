@@ -74,7 +74,7 @@
             {{ else if eq (os.Stat .File.Dir).Name "blog" }}
                 <!-- Let`s show some blog posts -->
                 {{ if $isHome }}
-                <a class="navbar-item" href="{{ printf "#%s" ( .Title | urlize) | relLangURL }}">{{ .Title | markdownify }}</a>
+                <a class="navbar-item" href="{{ printf "%s" ( .Title | urlize) | relLangURL }}">{{ .Title | markdownify }}</a>
                 {{ else }}
                 {{ $pageIsInBlog := eq $.Page.Section "blog"}}
                 {{ if not (and $pageIsInBlog (eq $.Page.Kind "section")) }}
